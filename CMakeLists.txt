@@ -10,7 +10,7 @@ set(PCH_HEADER
 set(PCH_SOURCE
     HiveEngine/src/lypch.cpp
     ${PCH_HEADER}
-    )
+)
 
 include_directories(HiveEngine/src)
 

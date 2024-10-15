@@ -5,7 +5,8 @@
 #include "OpenGlRenderAPI.h"
 #include <glad/glad.h>
 
-namespace hive {
+namespace hive
+{
     void OpenGlRenderAPI::setClearColor(glm::vec4 color)
     {
         glClearColor(color.r, color.g, color.b, color.a);
