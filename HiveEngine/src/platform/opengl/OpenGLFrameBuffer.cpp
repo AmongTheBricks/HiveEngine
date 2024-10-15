@@ -106,7 +106,6 @@ namespace hive {
             CreateTextures(multisample, colorAttachmentsID_.data(), colorAttachmentsID_.size());
 
             for(int i = 0; i < colorAttachmentsID_.size(); i++) {
-
                 glBindTexture(textureTarget(multisample), colorAttachmentsID_[i]);
                 addAttachment(colorAttachments_[i], i);
             }
@@ -114,25 +113,26 @@ namespace hive {
 
         // For a depth texture attachment
         switch(depthAttachment_.textureFormat_) {
-            CreateTextures(multisample, &depthAttachmentID_, 1);
-            glBindTexture(textureTarget(multisample), depthAttachmentID_);
-
             case OpenGLAttachmentFormat::DEPTH24:
+                CreateTextures(multisample, &depthAttachmentID_, 1);
+                glBindTexture(textureTarget(multisample), depthAttachmentID_);
                 addAttachment(depthAttachment_, 0);
                 break;
             case OpenGLAttachmentFormat::DEPTH24STENCIL8:
+                CreateTextures(multisample, &depthAttachmentID_, 1);
+                glBindTexture(textureTarget(multisample), depthAttachmentID_);
                 addAttachment(depthAttachment_, 0);
                 break;
             default:
-                Logger::log("Texture format is incorrect?", LogLevel::Error);
+                Logger::log("Texture format is not defined...", LogLevel::Error);
         }
 
         // For a separate stencil texture attachment
         if(stencilAttachment_.textureFormat_ == OpenGLAttachmentFormat::STENCIL8) {
-            CreateTextures(multisample, &depthAttachmentID_, 1);
-            glBindTexture(textureTarget(multisample), depthAttachmentID_);
+            CreateTextures(multisample, &stencilAttachmentID_, 1);
+            glBindTexture(textureTarget(multisample), stencilAttachmentID_);
 
-            addAttachment(depthAttachment_, 0);
+            addAttachment(stencilAttachment_, 0);
         }
 
     }
@@ -170,9 +170,6 @@ namespace hive {
                 break;
         }
 
-        if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-            throw std::runtime_error("Framebuffer is not complete!");
-        }
         unbind();
     }
 

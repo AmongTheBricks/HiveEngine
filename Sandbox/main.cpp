@@ -153,18 +153,18 @@ int main(void)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 
-    hive::FramebufferAttachmentSpecification fbAttachment = {
-
-    };
-
     hive::FramebufferSpecification specification = {
         320, 320,
         {
             { hive::OpenGLAttachmentFormat::RGBA8, true},
-            { hive::OpenGLAttachmentFormat::RED_INTEGER}
+            { hive::OpenGLAttachmentFormat::RED_INTEGER},
+            { hive::OpenGLAttachmentFormat::DEPTH24, false}
         },
         1
     };
+
+    hive::OpenGLFrameBuffer fb(specification);
+
 
 
     /* Loop until the user closes the window */
