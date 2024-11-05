@@ -1,14 +1,14 @@
 #pragma once
 
-#include "core/rendering/VertexBuffer.hpp"
-#include "core/rendering/BufferUtils.h"
+#include "core/rendering/buffers/VertexBuffer.h"
+#include "core/rendering/buffers/BufferUtils.h"
 
 namespace hive {
-    class OpenGlVertexBuffer : public VertexBuffer {
+    class OpenGLVertexBuffer : public VertexBuffer {
     public:
-        OpenGlVertexBuffer(float *vertices, uint32_t size);
+        OpenGLVertexBuffer(float *vertices, uint32_t size);
 
-        ~OpenGlVertexBuffer();
+        ~OpenGLVertexBuffer();
 
         virtual void bind() const override;
         virtual void unbind() const override;

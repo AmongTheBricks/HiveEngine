@@ -2,13 +2,14 @@
 // Created by lapor on 7/26/2024.
 //
 
-#include "opengl_shader.h"
+#include "Shader.h"
 
 #include <fstream>
 #include <sstream>
 
 
 #include "glad/glad.h"
+#include "glm/glm.hpp"
 
 namespace hive
 {
@@ -84,7 +85,7 @@ namespace hive
     }
 
 
-    OpenglShader::OpenglShader(const std::string &vertex_path, const std::string &fragment_path)
+    OpenGLShader::OpenGLShader(const std::string &vertex_path, const std::string &fragment_path)
     {
         const std::string vertexCode = readFile(vertex_path);
         const std::string fragmentCode = readFile(fragment_path);
@@ -115,35 +116,35 @@ namespace hive
     }
 
 
-    void OpenglShader::bind() const
+    void OpenGLShader::bind() const
     {
         glUseProgram(program_id);
     }
 
-    void OpenglShader::unbind() const
+    void OpenGLShader::unbind() const
     {
         glUseProgram(0);
     }
 
-    void OpenglShader::uploadUniformInt(const std::string& name, int value) const
+    void OpenGLShader::uploadUniformInt(const std::string& name, int value) const
     {
         GLint location = glGetUniformLocation(program_id, name.c_str());
         glUniform1i(location, value);
     }
 
-    void OpenglShader::uploadUniformFloat(const std::string& name, float value) const
+    void OpenGLShader::uploadUniformFloat(const std::string& name, float value) const
     {
         GLint location = glGetUniformLocation(program_id, name.c_str());
         glUniform1f(location, value);
     }
 
-    void OpenglShader::uploadUniformMat4(const std::string& name, const glm::mat4& matrix) const
+    void OpenGLShader::uploadUniformMat4(const std::string& name, const glm::mat4& matrix) const
     {
         GLint location = glGetUniformLocation(program_id, name.c_str());
         glUniformMatrix4fv(location, 1, GL_FALSE, &matrix[0][0]);
     }
 
-    void OpenglShader::uploadUniformFloat4(const std::string& name, glm::vec4 value) const
+    void OpenGLShader::uploadUniformFloat4(const std::string& name, glm::vec4 value) const
     {
         GLint location = glGetUniformLocation(program_id, name.c_str());
         glUniform4f(location, value.x, value.y, value.z, value.w);

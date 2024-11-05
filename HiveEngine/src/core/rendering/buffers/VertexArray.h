@@ -1,8 +1,8 @@
 #pragma once
 
 #include "lypch.h"
-#include "VertexBuffer.hpp"
-#include "IndexBuffer.hpp"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
 
 namespace hive {
 

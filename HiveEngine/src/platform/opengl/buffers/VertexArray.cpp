@@ -1,7 +1,6 @@
-#include "OpenGlVertexArray.hpp"
+#include "VertexArray.h"
 
 #include <glad/glad.h>
-#include "GLCheck.h"
 
 namespace hive {
     static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)

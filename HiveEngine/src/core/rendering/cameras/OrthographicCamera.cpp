@@ -3,7 +3,7 @@
 //
 
 
-#include "orthographic_camera.h"
+#include "OrthographicCamera.h"
 #include <glm/gtc/matrix_transform.hpp>
 
 namespace hive

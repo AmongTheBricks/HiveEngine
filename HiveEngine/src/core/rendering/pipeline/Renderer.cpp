@@ -1,4 +1,4 @@
-#include "Renderer.hpp"
+#include "Renderer.h"
 #include <glm/glm.hpp>
 
 #include "Renderer2D.h"

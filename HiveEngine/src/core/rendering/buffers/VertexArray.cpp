@@ -1,8 +1,10 @@
 
 
-#include "VertexArray.hpp"
-#include "Renderer.hpp"
-#include "platform/opengl/OpenGlVertexArray.hpp"
+#include "VertexArray.h"
+#include "core/rendering/pipeline/Renderer.h"
+#include <platform/opengl/buffers/VertexArray.h>
+
+#include "core/rendering/backend/RenderAPI.h"
 
 namespace hive {
 

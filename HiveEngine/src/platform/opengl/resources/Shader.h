@@ -6,15 +6,15 @@
 #define OPENGL_SHADER_H
 #include <string>
 
-#include "core/rendering/shader.h"
+#include "core/rendering/resources/Shader.h"
 
 
 namespace hive
 {
-    class OpenglShader final : public Shader
+    class OpenGLShader final : public Shader
     {
     public:
-        OpenglShader(const std::string &vertex_path, const std::string &fragment_path);
+        OpenGLShader(const std::string &vertex_path, const std::string &fragment_path);
 
         void bind() const override;
 

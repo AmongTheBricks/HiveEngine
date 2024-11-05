@@ -12,18 +12,18 @@
 #include "scene/query_builder.h"
 #include "scene/system_manager.h"
 
-#include "core/rendering/VertexBuffer.hpp"
-#include "core/rendering/IndexBuffer.hpp"
-#include "core/rendering/VertexArray.hpp"
-#include "core/rendering/BufferUtils.h"
-#include "core/rendering/Texture.h"
-#include "core/rendering/shader.h"
-#include "core/rendering/Renderer.hpp"
-#include "core/rendering/orthographic_camera.h"
+#include "core/rendering/buffers/VertexBuffer.h"
+#include "core/rendering/buffers/IndexBuffer.h"
+#include "core/rendering/buffers/VertexArray.h"
+#include "../HiveEngine/src/core/rendering/buffers/BufferUtils.h"
+#include "../HiveEngine/src/core/rendering/resources/Texture.h"
+#include "../HiveEngine/src/core/rendering/resources/Shader.h"
+#include "core/rendering/pipeline/Renderer.h"
+#include "core/rendering/cameras/OrthographicCamera.h"
 
-#include "core/rendering/Renderer2D.h"
+#include "core/rendering/pipeline/Renderer2D.h"
 
-#include "platform/opengl/opengl_shader.h"
+#include "platform/opengl/resources/Shader.h"
 
 
 
@@ -126,12 +126,12 @@ int main()
     std::string fragmentPath = "../../HiveEngine/assets/shaders/basicColorShader.frag.glsl";
     std::string vertexPath = "../../HiveEngine/assets/shaders/basicColorShader.vert.glsl";
 
-    std::shared_ptr<hive::OpenglShader> colorShader = std::make_shared<hive::OpenglShader>(vertexPath, fragmentPath);
+    std::shared_ptr<hive::OpenGLShader> colorShader = std::make_shared<hive::OpenGLShader>(vertexPath, fragmentPath);
 
     fragmentPath = "../../HiveEngine/assets/shaders/textureShader.frag.glsl";
     vertexPath = "../../HiveEngine/assets/shaders/textureShader.vert.glsl";
 
-    std::shared_ptr<hive::OpenglShader> textureShader = std::make_shared<hive::OpenglShader>(vertexPath, fragmentPath);
+    std::shared_ptr<hive::OpenGLShader> textureShader = std::make_shared<hive::OpenGLShader>(vertexPath, fragmentPath);
 
     std::shared_ptr<hive::VertexArray> vertexArray;
     std::shared_ptr<hive::VertexArray> squareVA;

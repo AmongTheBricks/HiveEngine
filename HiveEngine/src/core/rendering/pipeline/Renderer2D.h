@@ -5,10 +5,10 @@
 #ifndef RENDERER2D_H
 #define RENDERER2D_H
 
-#include "orthographic_camera.h"
-#include "VertexArray.hpp"
-#include "shader.h"
-#include "Texture.h"
+#include "core/rendering/cameras/OrthographicCamera.h"
+#include "core/rendering/buffers/VertexArray.h"
+#include "core/rendering/resources/Shader.h"
+#include "core/rendering/resources/Texture.h"
 
 namespace hive {
 

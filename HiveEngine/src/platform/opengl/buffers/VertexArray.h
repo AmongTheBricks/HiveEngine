@@ -1,7 +1,7 @@
 #pragma once
 
 #include "lypch.h"
-#include "core/rendering/VertexArray.hpp"
+#include "core/rendering/buffers/VertexArray.h"
 
 
 

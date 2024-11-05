@@ -5,7 +5,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include <glm/glm.hpp>
+#include "glm/fwd.hpp"
 
 namespace hive
 {

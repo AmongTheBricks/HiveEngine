@@ -1,6 +1,7 @@
 //
 // Created by mathe on 12/08/2024.
 //
+#pragma once
 
 #include "lypch.h"
 #include "RenderAPI.h"

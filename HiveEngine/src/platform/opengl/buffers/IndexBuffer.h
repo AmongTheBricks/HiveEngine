@@ -1,13 +1,13 @@
 #pragma once
 
-#include "core/rendering/IndexBuffer.hpp"
+#include "core/rendering/buffers/IndexBuffer.h"
 
 namespace hive {
-    class OpenGlIndexBuffer : public IndexBuffer {
+    class OpenGLIndexBuffer : public IndexBuffer {
     public:
-        OpenGlIndexBuffer(uint32_t *indices, uint32_t count);
+        OpenGLIndexBuffer(uint32_t *indices, uint32_t count);
 
-        ~OpenGlIndexBuffer();
+        ~OpenGLIndexBuffer();
 
         void bind() const override;
 

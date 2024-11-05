@@ -3,9 +3,10 @@
 //
 
 #include "Renderer2D.h"
-#include "platform/opengl/opengl_shader.h"
-#include "RenderCommand.h"
+#include "platform/opengl/resources/Shader.h"
 #include <glm/gtc/matrix_transform.hpp>
+
+#include "core/rendering/backend/RenderCommand.h"
 
 
 namespace hive {
@@ -41,12 +42,12 @@ namespace hive {
         std::string fragmentPathflatColor = "../../HiveEngine/assets/shaders/flatColor.frag.glsl";
         std::string vertexPathflatColor = "../../HiveEngine/assets/shaders/flatColor.vert.glsl";
 
-        render2dData->FlatColorShader = std::make_shared<hive::OpenglShader>(vertexPathflatColor, fragmentPathflatColor);
+        render2dData->FlatColorShader = std::make_shared<hive::OpenGLShader>(vertexPathflatColor, fragmentPathflatColor);
 
         std::string fragmentPathTexture = "../../HiveEngine/assets/shaders/texture.frag.glsl";
         std::string vertexPathTexture = "../../HiveEngine/assets/shaders/texture.vert.glsl";
 
-        render2dData->TextureShader = std::make_shared<hive::OpenglShader>(vertexPathTexture, fragmentPathTexture);
+        render2dData->TextureShader = std::make_shared<hive::OpenGLShader>(vertexPathTexture, fragmentPathTexture);
         render2dData->TextureShader->bind();
         render2dData->TextureShader->uploadUniformInt("u_Texture", 0);
     }

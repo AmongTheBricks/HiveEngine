@@ -3,10 +3,10 @@
 //
 
 #pragma once
-#include "core/rendering/RenderAPI.h"
+#include "core/rendering/backend/RenderAPI.h"
 
 namespace hive {
-    class OpenGlRenderAPI : public RenderAPI
+    class OpenGLRenderAPI : public RenderAPI
     {
         public:
             virtual void setClearColor(glm::vec4) override;

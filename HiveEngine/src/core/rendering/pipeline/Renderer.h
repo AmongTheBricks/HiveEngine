@@ -1,9 +1,9 @@
 #pragma once
 #include "lypch.h"
-#include "VertexArray.hpp"
-#include "shader.h"
-#include "RenderCommand.h"
-#include "orthographic_camera.h"
+#include "core/rendering/buffers/VertexArray.h"
+#include "core/rendering/resources/Shader.h"
+#include "core/rendering/backend/RenderCommand.h"
+#include "core/rendering/cameras/OrthographicCamera.h"
 #include <glm/glm.hpp>
 
 namespace hive {

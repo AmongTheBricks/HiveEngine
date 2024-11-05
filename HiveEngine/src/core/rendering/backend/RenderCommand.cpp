@@ -3,7 +3,7 @@
 //
 
 #include "RenderCommand.h"
-#include "platform/opengl/OpenGlRenderAPI.h"
+#include "platform/opengl/RenderAPI.h"
 
 
 namespace hive
@@ -13,7 +13,7 @@ namespace hive
         switch(RenderAPI::getAPI())
         {
             case RenderAPI::API::OpenGL:
-                return new OpenGlRenderAPI();
+                return new OpenGLRenderAPI();
             default:
                 return nullptr;
         }

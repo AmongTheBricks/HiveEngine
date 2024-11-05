@@ -2,7 +2,7 @@
 // Created by mathe on 05/08/2024.
 //
 
-#include "OpenGlTexture2D.h"
+#include "Texture2D.h"
 
 #include <glad/glad.h>
 
@@ -13,7 +13,7 @@
 
 
 namespace hive{
-    OpenGlTexture2D::OpenGlTexture2D(const std::string& path)
+    OpenGLTexture2D::OpenGLTexture2D(const std::string& path)
             : path_(path)
     {
         int width, height, channels;
@@ -45,12 +45,12 @@ namespace hive{
         stbi_image_free(data);
     }
 
-    OpenGlTexture2D::~OpenGlTexture2D()
+    OpenGLTexture2D::~OpenGLTexture2D()
     {
         glDeleteTextures(1, &rendererID_);
     }
 
-    void OpenGlTexture2D::bind(uint32_t slot) const
+    void OpenGLTexture2D::bind(uint32_t slot) const
     {
         glBindTextureUnit(slot, rendererID_);
     }
