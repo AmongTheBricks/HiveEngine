@@ -1,8 +1,9 @@
+#ifdef HIVE_BACKEND_OPENGL
+
 #include "Renderer.h"
 #include <glm/glm.hpp>
 
 #include "Renderer2D.h"
-
 
 namespace hive {
 
@@ -43,3 +44,5 @@ namespace hive {
         submitGeometryToDraw(vertexArray);
     }
 }
+
+#endif

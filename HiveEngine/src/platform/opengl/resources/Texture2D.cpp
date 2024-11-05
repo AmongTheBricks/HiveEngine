@@ -2,12 +2,13 @@
 // Created by mathe on 05/08/2024.
 //
 
+#ifdef HIVE_BACKEND_OPENGL
+
 #include "Texture2D.h"
 
 #include <glad/glad.h>
 
 #include "stb_image.h"
-
 #include <iostream>
 #include <filesystem>
 
@@ -57,3 +58,4 @@ namespace hive{
 
 }
 
+#endif

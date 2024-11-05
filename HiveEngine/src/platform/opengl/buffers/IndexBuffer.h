@@ -1,4 +1,5 @@
 #pragma once
+#ifdef HIVE_BACKEND_OPENGL
 
 #include "core/rendering/buffers/IndexBuffer.h"
 
@@ -20,3 +21,5 @@ namespace hive {
         uint32_t count_;
     };
 }
+
+#endif

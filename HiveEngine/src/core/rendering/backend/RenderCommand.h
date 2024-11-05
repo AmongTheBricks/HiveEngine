@@ -1,9 +1,11 @@
 //
 // Created by mathe on 12/08/2024.
 //
-#pragma once
 
-#include "lypch.h"
+#pragma once
+#ifdef HIVE_BACKEND_OPENGL
+
+#include <hvpch.h>
 #include "RenderAPI.h"
 #include <glm/glm.hpp>
 
@@ -36,3 +38,5 @@ namespace hive
             static RenderAPI* renderAPI_;
     };
 }
+
+#endif

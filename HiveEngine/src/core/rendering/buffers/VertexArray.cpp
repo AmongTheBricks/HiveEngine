@@ -1,10 +1,10 @@
+#ifdef HIVE_BACKEND_OPENGL
 
+#include "core/rendering/pipeline/Renderer.h"
+#include "core/rendering/backend/RenderAPI.h"
 
 #include "VertexArray.h"
-#include "core/rendering/pipeline/Renderer.h"
 #include <platform/opengl/buffers/VertexArray.h>
-
-#include "core/rendering/backend/RenderAPI.h"
 
 namespace hive {
 
@@ -20,3 +20,5 @@ namespace hive {
     }
 
 }
+
+#endif

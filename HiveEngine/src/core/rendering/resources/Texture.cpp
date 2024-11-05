@@ -1,3 +1,5 @@
+
+#ifdef HIVE_PLATFORM_OPENGL
 #include "Texture.h"
 
 #include "core/rendering/backend/RenderAPI.h"
@@ -20,3 +22,4 @@ namespace hive {
     }
 
 }
+#endif

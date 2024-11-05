@@ -1,3 +1,4 @@
+#ifdef HIVE_PLATFORM_OPENGL
 
 #include "IndexBuffer.h"
 #include "platform/opengl/buffers/IndexBuffer.h"
@@ -18,3 +19,5 @@ namespace hive {
         return nullptr;
     }
 }
+
+#endif

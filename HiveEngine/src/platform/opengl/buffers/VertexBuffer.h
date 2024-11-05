@@ -1,4 +1,5 @@
 #pragma once
+#ifdef HIVE_BACKEND_OPENGL
 
 #include "core/rendering/buffers/VertexBuffer.h"
 #include "core/rendering/buffers/BufferUtils.h"
@@ -21,3 +22,5 @@ namespace hive {
         BufferLayout layout_;
     };
 }
+
+#endif

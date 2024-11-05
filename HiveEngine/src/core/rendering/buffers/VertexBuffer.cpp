@@ -1,8 +1,7 @@
+#ifdef HIVE_BACKEND_OPENGL
 
 #include "VertexBuffer.h"
 #include <core/rendering/pipeline/Renderer.h>
-
-#include "core/rendering/backend/RenderAPI.h"
 #include "platform/opengl/buffers/VertexBuffer.h"
 
 namespace hive {
@@ -18,3 +17,5 @@ namespace hive {
 		return nullptr;
 	}
 }
+
+#endif

@@ -1,6 +1,7 @@
 #pragma once
+#ifdef HIVE_BACKEND_OPENGL
 
-#include "lypch.h"
+#include <hvpch.h>
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 
@@ -23,3 +24,5 @@ namespace hive {
         static VertexArray* create();
     };
 }
+
+#endif

@@ -3,6 +3,8 @@
 //
 
 #pragma once
+#ifdef HIVE_PLATFORM_OPENGL
+
 #include "core/rendering/backend/RenderAPI.h"
 
 namespace hive {
@@ -15,5 +17,7 @@ namespace hive {
             virtual void init() override;
     };
 }
+
+#endif
 
 

@@ -2,9 +2,10 @@
 // Created by mathe on 05/08/2024.
 //
 #pragma once
+#ifdef HIVE_PLATFORM_OPENGL
 
 #include "core/rendering/resources/Texture.h"
-#include "lypch.h"
+#include <hvpch.h>
 
 namespace hive {
 
@@ -25,3 +26,4 @@ namespace hive {
     };
 }
 
+#endif

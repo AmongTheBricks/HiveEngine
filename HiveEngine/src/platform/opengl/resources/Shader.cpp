@@ -2,11 +2,12 @@
 // Created by lapor on 7/26/2024.
 //
 
+#ifdef HIVE_BACKEND_OPENGL
+
 #include "Shader.h"
 
 #include <fstream>
 #include <sstream>
-
 
 #include "glad/glad.h"
 #include "glm/glm.hpp"
@@ -151,3 +152,5 @@ namespace hive
     }
 
 }
+
+#endif

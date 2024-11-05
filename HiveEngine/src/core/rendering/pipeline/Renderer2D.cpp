@@ -2,10 +2,11 @@
 // Created by mathe on 02/10/2024.
 //
 
+#ifdef HIVE_BACKEND_OPENGL
+
 #include "Renderer2D.h"
 #include "platform/opengl/resources/Shader.h"
 #include <glm/gtc/matrix_transform.hpp>
-
 #include "core/rendering/backend/RenderCommand.h"
 
 
@@ -98,3 +99,5 @@ namespace hive {
         RenderCommand::drawVertexArray(render2dData->QuadVertexArray);
     }
 }
+
+#endif

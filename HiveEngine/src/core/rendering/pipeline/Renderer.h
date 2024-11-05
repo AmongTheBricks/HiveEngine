@@ -1,5 +1,7 @@
 #pragma once
-#include "lypch.h"
+#ifdef HIVE_BACKEND_OPENGL
+
+#include <hvpch.h>
 #include "core/rendering/buffers/VertexArray.h"
 #include "core/rendering/resources/Shader.h"
 #include "core/rendering/backend/RenderCommand.h"
@@ -30,8 +32,6 @@ namespace hive {
 
         static SceneData* sceneData_;
 	}
-
-    ;
-
-
 }
+
+#endif

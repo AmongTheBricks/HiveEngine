@@ -1,7 +1,7 @@
 //
 // Created by mathe on 05/09/2024.
 //
-
+#ifdef HIVE_PLATFORM_OPENGL
 
 #include "OrthographicCamera.h"
 #include <glm/gtc/matrix_transform.hpp>
@@ -24,3 +24,5 @@ namespace hive
         viewProjectionMatrix_ = projectionMatrix_ * viewMatrix_;
     }
 }
+
+#endif

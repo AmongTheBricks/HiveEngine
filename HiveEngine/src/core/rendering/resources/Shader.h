@@ -2,8 +2,8 @@
 // Created by lapor on 7/26/2024.
 //
 
-#ifndef SHADER_H
-#define SHADER_H
+#pragma once
+#ifdef HIVE_BACKEND_OPENGL
 
 #include "glm/fwd.hpp"
 
@@ -35,4 +35,4 @@ namespace hive
     };
 }
 
-#endif //SHADER_H
+#endif

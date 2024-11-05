@@ -1,6 +1,6 @@
+#ifdef HIVE_BACKEND_OPENGL
 
 #include "VertexBuffer.h"
-
 #include <glad/glad.h>
 
 namespace hive {
@@ -24,3 +24,5 @@ namespace hive {
     }
 
 }
+
+#endif

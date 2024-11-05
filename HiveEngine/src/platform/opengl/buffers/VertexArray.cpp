@@ -1,5 +1,6 @@
-#include "VertexArray.h"
+#ifdef HIVE_BACKEND_OPENGL
 
+#include "VertexArray.h"
 #include <glad/glad.h>
 
 namespace hive {
@@ -77,3 +78,5 @@ namespace hive {
         indexBuffer_ = indexBuffer;
     }
 }
+
+#endif
