@@ -16,6 +16,7 @@
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <Core/Profiling/Profiler.h>
+#include <Core/Timing/RateController.h>
 
 #include "tiny_obj_loader.h"
 
@@ -67,6 +68,7 @@ struct VikingScene
 
 Testbed testbed;
 VikingScene scene;
+hive::RateController rateController(30);
 
 void InitDisplay(hive::EventManager &event_manager);
 void InitGraphic();
@@ -124,6 +126,7 @@ int main()
         hive::gfx::buffer_update(testbed.device, testbed.command_pool, scene.ubo_buffer[0], &ubo, sizeof(ubo));
         hive::gfx::tmp_draw(current_frame, testbed.device, testbed.in_flight_fences[current_frame], testbed.image_available_semaphore[current_frame], testbed.render_finished_semaphore[current_frame], testbed.swapchain, testbed.command_buffer, testbed.framebuffer, testbed.render_pass, testbed.shader_program,scene.vertex_buffer, scene.index_buffer, testbed.binding_group, scene.indices_count);
         current_frame = (current_frame + 1) % MAX_FRAME_IN_FLIGHT;
+        rateController.waitForNextTick();
         ProfileCZoneEnd(ctx);
 
     }

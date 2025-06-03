@@ -11,14 +11,13 @@ add_library(HiveCore SHARED
         Core/Platform/Platform_Linux.cpp
         Core/Platform/Platform_Windows.cpp
         Core/Profiling/Profiler.cpp
-
+        Core/Timing/RateController.cpp
         Graphic/GFX.cpp
 
         Display/DisplayAPI.cpp
 
 
         hive.cpp
-
 )
 target_precompile_headers(HiveCore PUBLIC hvpch.h)
 target_compile_definitions(HiveCore PRIVATE HIVE_EXPORTS)
