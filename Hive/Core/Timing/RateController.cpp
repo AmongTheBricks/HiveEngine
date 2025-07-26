@@ -1,4 +1,5 @@
 #include "RateController.h"
+#include <thread>
 
 namespace hive {
 	void RateController::waitForNextTick() {
