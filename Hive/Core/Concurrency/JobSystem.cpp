@@ -6,6 +6,7 @@
 
 namespace hive {
 	JobSystem::JobSystem() {
+		// Leaves two threads, one for the main program and one for the operating system
 		const unsigned int num_threads = std::max(1U, std::thread::hardware_concurrency() -2U);
 		HIVE_LOG_INFO("Creating %i worker threads", num_threads);
 
