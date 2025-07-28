@@ -7,7 +7,7 @@ namespace hive {
 	public:
 
 		RateController(int targetRate)
-			: frameDuration(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::duration<double>(1000.0 / targetRate))),
+			: frameDuration(1000/targetRate),
 			lastUpdateTime(std::chrono::high_resolution_clock::now())
 		{}
 
