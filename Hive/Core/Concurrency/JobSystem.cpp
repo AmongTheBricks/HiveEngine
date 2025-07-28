@@ -1,7 +1,3 @@
-//
-// Created by wstap on 2025-07-27.
-//
-
 #include "JobSystem.h"
 
 namespace hive {
@@ -18,9 +14,11 @@ namespace hive {
 
 	JobSystem::~JobSystem() {
 		HIVE_LOG_INFO("Shutting down job system and joining threads.");
-		std::unique_lock lock(m_queueMutex);
-		m_shouldStop = true;
-		m_condition.notify_all();
+		{
+			std::unique_lock lock(m_queueMutex);
+			m_shouldStop = true;
+			m_condition.notify_all();
+		}
 
 		for (auto& thread : m_threads) {
 			if (thread.joinable()) {

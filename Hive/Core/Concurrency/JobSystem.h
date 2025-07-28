@@ -1,7 +1,3 @@
-//
-// Created by wstap on 2025-07-27.
-//
-
 #pragma once
 #include <thread>
 #include <utility>
@@ -11,7 +7,12 @@
 namespace hive {
     class HIVE_API IJob {
     public:
+        IJob() = default;
         virtual ~IJob() = default;
+
+        IJob(const IJob&) = delete;
+        IJob& operator=(const IJob&) = delete;
+
         virtual void operator()() const = 0;
     };
 
