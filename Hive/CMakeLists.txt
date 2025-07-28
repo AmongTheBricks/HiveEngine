@@ -12,10 +12,10 @@ add_library(HiveCore SHARED
         Core/Platform/Platform_Windows.cpp
         Core/Profiling/Profiler.cpp
         Core/Timing/RateController.cpp
+        Core/Concurrency/JobSystem.cpp
+
         Graphic/GFX.cpp
-
         Display/DisplayAPI.cpp
-
 
         hive.cpp
 )

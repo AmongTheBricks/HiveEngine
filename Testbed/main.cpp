@@ -19,6 +19,7 @@
 #include <Core/Timing/RateController.h>
 
 #include "tiny_obj_loader.h"
+#include "JobExample/Job.h"
 
 
 constexpr int MAX_FRAME_IN_FLIGHT = 3;
@@ -68,7 +69,10 @@ struct VikingScene
 
 Testbed testbed;
 VikingScene scene;
+
 hive::RateController rateController(30);
+
+
 
 void InitDisplay(hive::EventManager &event_manager);
 void InitGraphic();
@@ -102,9 +106,26 @@ int main()
         application_run = false;
     });
 
+
+    hive::JobSystem jobSystem;
+
+    for(int i = 0; i < 10000; i++) {
+        jobSystem.schedule(
+            std::make_unique<hive::CountJob>(i*10000, i*10000 + 9999)
+        );
+        jobSystem.schedule([i]()
+        {
+            int k = 1;
+            for(int j = i*10000; j < i*10000+9999; j++) {
+                k*= j;
+            }
+            std::cout << k << "Lambda job done with start=" << i*10000 << std::endl;
+        });
+    }
     HIVE_LOG_INFO("Hello World");
     int current_frame = 0;
     static auto startTime = std::chrono::high_resolution_clock::now();
+
     while(application_run)
     {
         ProfileCZoneName(ctx, "render");

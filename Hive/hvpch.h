@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <functional>
 #include <string>
 #include <vector>
@@ -7,6 +8,7 @@
 #include <memory>
 #include <unordered_map>
 #include <queue>
+#include <deque>
 
 
 using uint8 = uint8_t;

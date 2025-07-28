@@ -1,4 +1,6 @@
-add_executable(Testbed main.cpp)
+add_executable(Testbed main.cpp
+        JobExample/Job.h
+)
 target_link_libraries(Testbed PRIVATE HiveCore)
 
 if(WIN32)
