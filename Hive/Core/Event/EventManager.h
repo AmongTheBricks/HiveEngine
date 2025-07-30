@@ -66,8 +66,8 @@ namespace hive
          */
         EVENT_CODE_WINDOW_RESIZED = 0x09,
 
-        // Change the render mode for debugging purposes.
-        /* Context usage:
+        /** @brief Change the render mode for debugging purposes.
+         * Context usage:
          * i32 mode = context.data.i32[0];
          */
         EVENT_CODE_SET_RENDER_MODE = 0x0A,
@@ -82,17 +82,27 @@ namespace hive
         EVENT_CODE_DEBUG3 = 0x13,
         /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG4 = 0x14,
-
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG5 = 0x15,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG6 = 0x16,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG7 = 0x17,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG8 = 0x18,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG9 = 0x19,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG10 = 0x1A,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG11 = 0x1B,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG12 = 0x1C,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG13 = 0x1D,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG14 = 0x1E,
+        /** @brief Special-purpose debugging event. Context will vary over time. */
         EVENT_CODE_DEBUG15 = 0x1F,
 
         /** @brief The hovered-over object id, if there is one.
